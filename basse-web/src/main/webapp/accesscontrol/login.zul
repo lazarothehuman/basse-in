@@ -1,0 +1,23 @@
+<zk>
+	<window title="${labels.application.name}" width="400px"
+		position="center" mode="overlapped"
+		apply="mz.co.basse.accesscontrol.web.login.LoginController">
+		<grid>
+			<rows>
+				<row>
+					<label value="${labels.user}" />
+					<textbox id="user" constraint="no empty: ${labels.mandatory.field}" />
+				</row>
+				<row>
+					<label value="${labels.password.record}" />
+					<textbox id="password" type="password"
+						constraint="no empty: ${labels.mandatory.field}" />
+				</row>
+			</rows>
+		</grid>
+		<button id="loginButton" label="${labels.login.record}" />
+		<zscript>
+			user.focus();
+		</zscript>
+	</window>
+</zk>

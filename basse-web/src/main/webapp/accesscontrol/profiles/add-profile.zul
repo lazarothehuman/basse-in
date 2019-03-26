@@ -1,0 +1,26 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply="mz.co.basse.accesscontrol.web.profiles.AddProfileController">
+		<grid>
+			<columns>
+				<column width="200px" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.name.record} (*)" />
+					<textbox id="name" width="500px"
+						constraint="no empty" />
+				</row>
+			</rows>
+		</grid>
+		<listbox id="transactionsList" vflex="1" multiple="true"
+			checkmark="true">
+			<listhead>
+				<listheader label="${labels.name.record}" />
+			</listhead>
+		</listbox>
+		<button id="saveButton" label="${labels.save.$}" />
+	</window>
+</zk>

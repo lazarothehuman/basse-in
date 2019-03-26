@@ -1,0 +1,141 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply="">
+	<grid>
+			<columns>
+				<column width="200px" align="right" />
+				<column />
+				<column width="200px" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.invoice.issue} (*)" />
+					<label id="issueDate" />
+					<label value="${labels.service.record} (*)" />
+					<combobox id="service" constraint="no empty" width="350px" />
+				</row>
+			</rows>
+		</grid>
+
+		       
+		<groupbox>			       
+			<caption label="${labels.item.details}" />
+			<grid>
+
+				<columns>
+					<column width="200px" align="right" />
+					<column />
+					<column width="200px" align="right" />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						
+						<label value="${labels.products.record} (*)" />
+						<cell>
+						<combobox id="product" constraint="no empty" />						
+						<label value="${labels.item.quantity} (*)" style="margin-left:7em" />
+						<decimalbox id="itemQuantity" constraint="no empty, no negative, no zero" 
+									style="margin-left:10px" />
+						</cell>
+						<label value="${labels.unit.price} (*)" />
+						<decimalbox id="unitPrice" constraint="no empty, no negative, no zero" xmlns:w="client"
+									 w:onKeyPress="replaceDotForComma(event)" />
+					</row>
+					<row>
+						<label value="${labels.item.total} (*)" />
+						<decimalbox id="total" readonly="true" />
+						<label value="${labels.description} (*)" />
+						<textbox id="description" rows="3" width="350px"
+							constraint="no empty" />
+					</row>
+				</rows>
+
+			</grid>
+
+			<button id="saveItem" label="${labels.save.item}" />
+			<button id="newItem" label="${labels.add.item}" />
+			<button id="removeItem" label="${labels.remove.item}" />
+
+			       
+			<groupbox>
+
+				       
+				<caption label="${labels.item.list}" />
+
+				<listbox id="itemsList" rows="5" vflex="1" checkmark="true">
+					<listhead>
+						<listheader label="${labels.name.record}" />
+						<listheader label="${labels.unit.price}" />
+						<listheader label="${labels.item.quantity}" />
+						<listheader label="${labels.description}" />
+						<listheader label="${labels.item.total}" />
+					</listhead>
+					<listfoot>
+						<listfooter id="totalItems" label="Item : " align="left"
+							span="4" />
+						<listfooter id="totalAmount" label="Total :" align="left" />
+					</listfoot>
+				</listbox>
+				        
+			</groupbox>
+
+			        
+		</groupbox>
+
+		<grid>
+				<columns>
+					<column width="320px" />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<hlayout spacing="5px">
+							<button id="saveButton"
+								label="${labels.save.$}" autodisable="self" />
+							<button id="cancelButton"
+								label="${labels.record.cancel}" />
+						</hlayout>
+						<hlayout>
+							<vlayout>
+								<label
+									value="${labels.form.of.payment} (*)" />
+								<combobox id="formOfPayment"
+									readonly="true" constraint="no empty">
+									<template name="model">
+										<comboitem
+											label="${$composer.internationalize(each)}" value="${each}" />
+									</template>
+								</combobox>
+							</vlayout>
+							<vlayout>
+								<label
+									value="${labels.paid.amount.$} (*)" />
+								<decimalbox id="paidAmount"
+									width="200px" constraint="no empty, no zero, no negative"
+									format="${labels.currency.format}" />
+							</vlayout>
+						</hlayout>
+					</row>
+				</rows>
+			</grid>
+		
+		<script>
+			
+			 function replaceDotForComma(event) {
+           		if(event.which==46){
+            	
+                	var element = event.domTarget;
+                	var selectionStart= element.selectionStart;
+                	var text = element.value;
+                	text = text.substring(0, element.selectionStart) +',';
+          			element.value = text;
+          	        	
+          			event.stop();
+              	}
+            }
+		</script>
+</window>
+</zk>

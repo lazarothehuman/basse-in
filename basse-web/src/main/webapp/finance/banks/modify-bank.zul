@@ -1,0 +1,20 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply="mz.co.basse.finance.web.banks.ModifyBankController">
+		<grid>
+			<columns>
+				<column width="200px" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.name.record} (*)" />
+					<textbox id="name" constraint="no empty" />
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<button id="saveButton" label="${labels.save.$}" />
+	</window>
+</zk>

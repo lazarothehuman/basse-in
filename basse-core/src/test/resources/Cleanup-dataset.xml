@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<transaction />
+	<profile />
+	<profile_transaction />
+	<user />
+	<client />
+	<bank />
+	<product />
+	<sale />
+	<product_sale_item />
+	<stock />
+	<payment />
+</dataset>

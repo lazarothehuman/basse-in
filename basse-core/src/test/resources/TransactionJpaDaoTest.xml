@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<transaction ID="1" code="001" name="Cadastrar Transacções"
+		active="true" />
+	<transaction ID="2" code="002" name="Cadastrar Perfis"
+		active="true" />
+	<transaction ID="3" code="003" name="Cadastrar Usuários"
+		active="false" />
+</dataset>

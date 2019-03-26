@@ -1,0 +1,30 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply="mz.co.basse.accesscontrol.web.profiles.ProfilesListeningController"
+		width="100%">
+
+		<grid>
+			<rows>
+				<row>
+					<hbox>
+						<button id="addButton" label="${labels.add.record}" />
+						<button id="inactivateButton" label="${labels.inactivate.activate}" />
+					</hbox>
+					<hbox>
+						<button id="searchButton" label="${labels.search.record}" />
+						<label value="${labels.show.inactives}" />
+						<checkbox id="showInactives" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+
+		<listbox id="profilesList" vflex="1" checkmark="true">
+			<listhead>
+				<listheader label="${labels.name.record}" />
+				<listheader label="${labels.active.record}" />
+			</listhead>
+		</listbox>
+	</window>
+</zk>

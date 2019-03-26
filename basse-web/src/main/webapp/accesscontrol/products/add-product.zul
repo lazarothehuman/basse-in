@@ -1,0 +1,54 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window
+		apply="mz.co.basse.accesscontrol.web.products.AddProductController">
+		<grid>
+			<columns>
+				<column width="300px" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.name.record} (*)" />
+					<textbox id="name" width="700px" constraint="no empty" />
+				</row>				
+				<row>
+					<label value="${labels.product.category}" />
+					<combobox id="category" width="200px" />
+				</row>
+				<row>
+					<label value="${labels.amount.record} (*)" />
+					<decimalbox id="value" format="${labels.currency.format}"
+						constraint="no empty, no zero, no negative" xmlns:w="client"
+									w:onKeyPress="replaceDotForComma(event)" />
+				</row>
+				<row>
+					<label value="${labels.product.quantity} (*)" />
+					<spinner id="quantity" width="50px"
+						value="0" constraint="min 0" />
+				</row>
+				<row>
+					<label value="${labels.limited.product}" />
+					<checkbox id="limited" width="200px" />
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<button id="saveButton" label="${labels.save.$}" />
+		<script>
+
+			function replaceDotForComma(event) { 
+			
+			if(event.which==46){
+
+				var element = event.domTarget; var selectionStart=
+				element.selectionStart; var text = element.value; text =
+				text.substring(0, element.selectionStart) +',';
+				element.value = text;
+	
+				event.stop(); 
+				} 
+			}
+		</script>
+	</window>
+</zk>

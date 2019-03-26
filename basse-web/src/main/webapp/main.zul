@@ -1,0 +1,54 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window title="${labels.application.name}" height="100%"
+		apply="mz.co.basse.web.main.MainController">
+		<borderlayout>
+			<north>
+				<vbox>
+					<grid>
+						<rows>
+							<row>
+								<label id="login" />
+								<label id="profile" />
+								<image id="logout" align="right" src="logout.png" width="30px" height="30px"
+									style="margin-right:20px; cursor:pointer" onClick="$composer.logout()"  />
+							</row>
+						</rows>
+					</grid>
+					<menubar>
+						<menu id="saleMenu" label="${labels.sale}">
+							<menupopup style="padding:2px">
+							</menupopup>
+						</menu>
+						<menu id="financeMenu" label="${labels.finance}">
+							<menupopup>
+							</menupopup>
+						</menu>
+						<menu id="recordMenu" label="${labels.registration.record}">
+							<menupopup style="padding:2px">
+							</menupopup>
+						</menu>
+						<menu id="reportsMenu" label="${labels.report.record}">
+							<menupopup>
+							</menupopup>
+						</menu>
+						<menu id="recordSystemMenu" label="${labels.system}">
+							<menupopup style="padding:2px">
+								<menuitem id="logoutMenuItem" label="${labels.logout}" />
+							</menupopup>
+						</menu>
+					</menubar>
+				</vbox>
+			</north>
+			<center>
+				<tabbox id="contentTabbox" height="100%">
+					<tabs></tabs>
+					<tabpanels></tabpanels>
+				</tabbox>
+			</center>
+			<south>
+				<label value="${labels.developer.message}" />
+			</south>
+		</borderlayout>
+	</window>
+</zk>

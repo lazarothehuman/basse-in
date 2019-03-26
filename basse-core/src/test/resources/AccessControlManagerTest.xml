@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<transaction ID="100" code="001" name="Cadastrar Transacções"
+		active="true" />
+	<profile ID="100" name="Gestor de Recursos Humanos" active="true" />
+	<profile_transaction profile_id="100"
+		transaction_id="100" />
+
+</dataset>

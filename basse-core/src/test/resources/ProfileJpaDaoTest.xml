@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<transaction ID="1" code="001" name="Cadastrar Transacções"
+		active="true" />
+	<transaction ID="2" code="002" name="Cadastrar Perfis"
+		active="true" />
+	<transaction ID="3" code="003" name="Cadastrar Usuários"
+		active="false" />
+	<profile ID="1" name="Gestor de Recursos Humanos" active="true" />
+	<profile ID="2" name="Auxiliar de Gerência" active="true" />
+	<profile ID="3" name="Perfil Inactivo" active="false" />
+	<profile_transaction profile_id="1" transaction_id="1" />
+	<profile_transaction profile_id="2" transaction_id="2" />
+	<profile_transaction profile_id="3" transaction_id="3" />
+</dataset>

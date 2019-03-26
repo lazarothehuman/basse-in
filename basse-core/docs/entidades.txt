@@ -1,0 +1,37 @@
+Tabela Ficheiro
+- record_name			Nome do registo							textbox
+- record_description	Breve descrição sobre o Ficheiro 			textbox
+- file_name				Nome do ficheiro carregado 				noinput
+- file_path				Path do ficheiro no servidor				noinput
+- file_size				Tamanho do ficheiro no disco				noinput
+- file_upload_date		Data de carregamento do Ficheiro 		noinput
+- file_upload_user		Utilizador que carregou o Ficheiro 		noinput
+
+- data_location			Descrição geográfica de onde se extraíu os dados. Nome de ilha ou praia		textbox
+- data_coordinates		Cordenadas geográficas																		textbox
+- data_equipment		Equipamento de onde se extraiu os dados. equipment_id							
+
+- project_name			Nome do projecto a que os dados se referem													input
+- tags 					Tags relacionadas com o Ficheiro 															chosenbox, FK
+
+- record_date			Data de criação/actualizacao do registo
+- 
+
+- last_download_date	Data em que se fez download do ficheiro pela última vez
+- last_download_user	Utilizador que fez download pela última vez
+
+
+Tabela Tags
+- name 			Nome da tag
+- group			Uma forma de agrupar as tags
+- type 			Uma forma de filtrar tags de varios grupos
+ex:
+departamento, cartografia, GENERIC
+departamento, hidrografia, GENERIC
+project, mocimboa da praia, GENERIC
+project, ilha de mocambique, GENERIC
+
+Tabela Equipment
+- name		Nome ou Identificador atribuido ao Equipamento 		
+- equipment_type  Enum (Boia, Farol, etc)	combobox
+

@@ -1,0 +1,11 @@
+insert into bank(id, name, active) values (null,'Millennium BIM',true);
+insert into bank(id, name, active) values (null,'BCI',true);
+insert into bank(id, name, active) values (null,'Banco Terra',true);
+insert into bank(id, name, active) values (null,'Barclays',true);
+insert into bank(id, name, active) values (null,'Standard Bank',true);
+insert into bank(id, name, active) values (null,'Capital Bank',true);
+insert into bank(id, name, active) values (null,'FNB Moçambique',true);
+insert into bank(id, name, active) values (null,'Moza Banco',true);
+insert into bank(id, name, active) values (null,'Banco Único',true);
+insert into bank(id, name, active) values (null,'Banco de Moçambique',true);
+insert into bank(id, name, active) values (null,'Banco ABC',true);
