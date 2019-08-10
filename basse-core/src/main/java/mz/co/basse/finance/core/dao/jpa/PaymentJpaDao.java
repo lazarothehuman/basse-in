@@ -15,10 +15,10 @@ import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 
 import mz.co.basse.accesscontrol.core.model.Client;
-import mz.co.basse.accesscontrol.core.model.Sale;
 import mz.co.basse.accesscontrol.core.model.User;
 import mz.co.basse.finance.core.dao.PaymentDao;
 import mz.co.basse.finance.core.model.Payment;
+import mz.co.basse.finance.core.model.Sale;
 
 @Repository(value = "paymentDao")
 public class PaymentJpaDao implements PaymentDao {

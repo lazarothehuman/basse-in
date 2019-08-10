@@ -12,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,7 +20,6 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import mz.co.basse.accesscontrol.core.model.Client;
-import mz.co.basse.accesscontrol.core.model.Sale;
 import mz.co.basse.accesscontrol.core.model.User;
 import mz.co.basse.core.model.Activable;
 import mz.co.basse.core.model.Identifiable;
@@ -65,9 +63,9 @@ public class Payment implements Identifiable, Activable {
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
-	@OneToOne
-	@JoinColumn(name = "sale_id")
-	private Sale sale;
+//	@OneToOne
+//	@JoinColumn(name = "sale_id")
+//	private Sale sale;
 
 	@Column(nullable = false, columnDefinition = "bit")
 	private boolean active = true;
@@ -128,14 +126,7 @@ public class Payment implements Identifiable, Activable {
 		this.receiptNumber = receiptNumber;
 	}
 
-	public Sale getSale() {
-		return sale;
-	}
-
-	public void setSale(
-			Sale sale) {
-		this.sale = sale;
-	}
+	
 
 	public Date getDate() {
 		return date;

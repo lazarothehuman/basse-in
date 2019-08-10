@@ -55,7 +55,7 @@ public class ModifyProductController  extends AutoClosableController {
 //		selectedPoduct.setAddress(address.getText());
 //		selectedPoduct.setPhone(phone.getText());
 //		selectedPoduct.setEmail(email.getText());
-		accessControlManager.createOrUpdateProduct(selectedPoduct);
+		//accessControlManager.createOrUpdateProduct(selectedPoduct);
 		
 		close();
 	}

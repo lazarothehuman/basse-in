@@ -60,4 +60,17 @@ public class ProductJpaDao implements ProductDao {
 		entityManager.merge(product);
 	}
 
+	@Override
+	public Product findProduct(Long id) {
+		TypedQuery<Product> query = entityManager.createQuery(
+				"select product from Product product where id = :id",
+				Product.class);
+		query.setParameter("id", id);
+		List<Product> products = query.getResultList();
+		if (products.isEmpty()) {
+			return null;
+		}
+		return products.get(0);
+	}
+
 }

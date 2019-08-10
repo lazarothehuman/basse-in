@@ -1,8 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-	<transaction ID="100" code="001" name="Cadastrar Transacções"
+	<client id="1" name="Lazaro Mathe Junior" phone="+258825004957"
+		email="lazaromathe@hotmail.com" address="Matola" date="2019-03-11 20:36:17.0" active="true" />
+	<product id="1" name="Camera" category="ALARMS" active="true" />
+	<transaction ID="100" code="001"
+		name="Cadastrar Transacções" active="true" />
+	<profile ID="100" name="Gestor de Recursos Humanos"
 		active="true" />
-	<profile ID="100" name="Gestor de Recursos Humanos" active="true" />
 	<profile_transaction profile_id="100"
 		transaction_id="100" />
 

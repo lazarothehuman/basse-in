@@ -1,14 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
+	<supplier />
+	<technician />
+	<levy />
+	<levy_item />
+	<product />
+	<product_price />
+	<request />
+	<request_item />
 	<transaction />
 	<profile />
 	<profile_transaction />
 	<user />
 	<client />
 	<bank />
-	<product />
-	<sale />
-	<product_sale_item />
-	<stock />
 	<payment />
 </dataset>

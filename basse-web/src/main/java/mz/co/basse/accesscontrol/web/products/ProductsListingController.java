@@ -74,27 +74,27 @@ public class ProductsListingController extends AutoClosableController {
 		updateGrid(null);
 	}
 	public void updateGrid(String typedName) {
-		UIHelper.clearListbox(productsList);
+	//	UIHelper.clearListbox(productsList);
 //		List<Product> products = null;
-		List<Product> products = accessControlManager.findProducts(name.getText(), null, !showInactives.isChecked());
-		if (products.size() == RESULTS_LIMIT) {
-			Messagebox.show(Labels.getLabel("search.was.limited"));
-		}
-		for (Product product : products) {
-			Listitem listitem = new Listitem();
-			listitem.setValue(product);
-			listitem.appendChild(new Listcell(product.getName()));
-			listitem.appendChild(new Listcell("Categoria"));
-			listitem.appendChild(new Listcell(FormatUtils.getCurrencyFormat().format(product.getPricePerUnit())));
-			listitem.appendChild(new Listcell(FormatUtils.formatBoolean(product.isLimited())));
-			listitem.appendChild(new Listcell(product.getStock().getQuantity()+""));
-			listitem.appendChild(
-					new Listcell(FormatUtils.formatBoolean(product.isActive())));
-			productsList.appendChild(listitem);
-		}
-		UIHelper.setRecordsNumber(products.size(), productsList);
+		//List<Product> products = accessControlManager.findProducts(name.getText(), null, !showInactives.isChecked());
+		//if (products.size() == RESULTS_LIMIT) {
+			//Messagebox.show(Labels.getLabel("search.was.limited"));
+		//}
+//		for (Product product : products) {
+//			Listitem listitem = new Listitem();
+//			listitem.setValue(product);
+//			listitem.appendChild(new Listcell(product.getName()));
+//			listitem.appendChild(new Listcell("Categoria"));
+//			listitem.appendChild(new Listcell(FormatUtils.getCurrencyFormat().format(product.getPricePerUnit())));
+//			listitem.appendChild(new Listcell(FormatUtils.formatBoolean(product.isLimited())));
+//			listitem.appendChild(new Listcell(product.getStock().getQuantity()+""));
+//			listitem.appendChild(
+//					new Listcell(FormatUtils.formatBoolean(product.isActive())));
+//			productsList.appendChild(listitem);
+//		}
+//		UIHelper.setRecordsNumber(products.size(), productsList);
+//	}
 	}
-
 	@Listen("onClick = #addButton")
 	public void add() {
 		SessionHelper.getMainController().createNewTab(
@@ -121,7 +121,7 @@ public class ProductsListingController extends AutoClosableController {
 					public void onEvent(Event e) {
 						if (Messagebox.ON_OK.equals(e.getName())) {
 							product.setActive(!product.isActive());
-							accessControlManager.createOrUpdateProduct(product);
+						//	accessControlManager.createOrUpdateProduct(product);
 							updateGrid(null);
 						}
 					}

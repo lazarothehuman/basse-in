@@ -5,6 +5,7 @@ import java.util.List;
 import mz.co.basse.accesscontrol.core.model.Client;
 import mz.co.basse.accesscontrol.core.model.Product;
 import mz.co.basse.accesscontrol.core.model.Profile;
+import mz.co.basse.accesscontrol.core.model.Request;
 import mz.co.basse.accesscontrol.core.model.Transaction;
 import mz.co.basse.accesscontrol.core.model.User;
 
@@ -41,10 +42,14 @@ public interface AccessControlManager {
 	
 	
 	public String nextBarcode();
+
+	List<Client> findClients(Long id, String email, String name, String phone, boolean active);
+
+	Client findClient(Long id);
+
+	Product findProduct(Long id);
+
+	void createRequest(Request request);
 	
-	//Product
-	void createOrUpdateProduct(Product product);
-	
-	List<Product> findProducts(String name, Boolean limited, Boolean active);
 
 }

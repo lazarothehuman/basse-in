@@ -19,8 +19,8 @@ import org.springframework.stereotype.Repository;
 import mz.co.basse.accesscontrol.core.dao.SaleDao;
 import mz.co.basse.accesscontrol.core.model.Client;
 import mz.co.basse.accesscontrol.core.model.PaymentStatus;
-import mz.co.basse.accesscontrol.core.model.Sale;
 import mz.co.basse.accesscontrol.core.model.User;
+import mz.co.basse.finance.core.model.Sale;
 
 @Repository(value = "saleDao")
 public class SaleJpaDao implements SaleDao {

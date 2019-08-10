@@ -11,5 +11,7 @@ public interface ProductDao {
 	List<Product> findProducts(String name, Boolean limited, Boolean active);
 	
 	void update(Product product);
+
+	Product findProduct(Long id);
 	
 }

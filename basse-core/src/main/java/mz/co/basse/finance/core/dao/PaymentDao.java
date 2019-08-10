@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import mz.co.basse.accesscontrol.core.model.Client;
-import mz.co.basse.accesscontrol.core.model.Sale;
 import mz.co.basse.accesscontrol.core.model.User;
 import mz.co.basse.finance.core.model.Payment;
+import mz.co.basse.finance.core.model.Sale;
 
 
 public interface PaymentDao {

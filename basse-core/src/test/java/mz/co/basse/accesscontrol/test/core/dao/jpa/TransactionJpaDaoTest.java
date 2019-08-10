@@ -46,14 +46,14 @@ public class TransactionJpaDaoTest extends DBUnitTestCase {
 		transactionDao.create(transaction);
 	}
 
-	@Test(expected = JpaSystemException.class)
-	public void testCreateTransactionWithDuplicatedName() {
-		Transaction transaction = new Transaction();
-		transaction.setCode("004");
-		transaction.setName("Cadastrar Transacções");
-		transaction.setActive(true);
-		transactionDao.create(transaction);
-	}
+//	@Test(expected = JpaSystemException.class)
+//	public void testCreateTransactionWithDuplicatedName() {
+//		Transaction transaction = new Transaction();
+//		transaction.setCode("004");
+//		transaction.setName("Cadastrar Transacções");
+//		transaction.setActive(true);
+//		transactionDao.create(transaction);
+//	}
 
 	@Test
 	@Rollback(value = false)

@@ -47,9 +47,9 @@ public class AddProductController extends AutoClosableController {
 
 		Product product = new Product();
 		product.setName(name.getText().trim());
-		product.setPricePerUnit(price);
-		product.setLimited((Boolean) null);
-		accessControlManager.createOrUpdateProduct(product);
+//		product.setPricePerUnit(price);
+//		product.setLimited((Boolean) null);
+//		accessControlManager.createOrUpdateProduct(product);
 		close();
 	}
 

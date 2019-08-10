@@ -3,33 +3,35 @@ package mz.co.basse.accesscontrol.core.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name = "product")
-public class Product {
-	
+@Table(name = "supplier")
+public class Supplier {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(nullable=false)
-	private String name;
-	
-	@Enumerated(EnumType.STRING)
+
 	@Column(nullable = false)
-	private Category category;
+	private String name;
+
+	private String phone;
+
+	private String email;
 	
-	@OneToMany(mappedBy="product")
-	private List<ProductPrice> prices = new ArrayList<>();
+	private String address;
+	
+	@OneToMany(mappedBy = "supplier", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private List<ProductPrice> products = new ArrayList<>();
 	
 	@Column(nullable = false, columnDefinition = "bit")
 	private boolean active = true;
@@ -50,20 +52,36 @@ public class Product {
 		this.name = name;
 	}
 
-	public Category getCategory() {
-		return category;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public List<ProductPrice> getPrices() {
-		return prices;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPrices(List<ProductPrice> prices) {
-		this.prices = prices;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public List<ProductPrice> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<ProductPrice> products) {
+		this.products = products;
 	}
 
 	public boolean isActive() {
@@ -73,5 +91,7 @@ public class Product {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	
 
 }

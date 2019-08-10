@@ -11,13 +11,13 @@ import mz.co.basse.accesscontrol.core.dao.ClientDao;
 import mz.co.basse.accesscontrol.core.dao.SaleDao;
 import mz.co.basse.accesscontrol.core.manager.AccessControlManager;
 import mz.co.basse.accesscontrol.core.model.Client;
-import mz.co.basse.accesscontrol.core.model.Sale;
 import mz.co.basse.accesscontrol.core.model.User;
 import mz.co.basse.core.exception.DuplicateEntryException;
 import mz.co.basse.finance.core.dao.BankDao;
 import mz.co.basse.finance.core.dao.PaymentDao;
 import mz.co.basse.finance.core.model.Bank;
 import mz.co.basse.finance.core.model.Payment;
+import mz.co.basse.finance.core.model.Sale;
 
 
 @Service(value = "financeManager")

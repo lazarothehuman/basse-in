@@ -1,12 +1,15 @@
 package mz.co.basse.accesscontrol.core.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,9 +21,6 @@ import mz.co.basse.core.model.Identifiable;
 @Table(name = "client")
 public class Client implements Identifiable, Activable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2551634247802365227L;
 
 	@Id
@@ -39,6 +39,9 @@ public class Client implements Identifiable, Activable {
 	private String phone;
 
 	private String email;
+	
+	@OneToMany(mappedBy="client")
+	private List<Request> requests = new ArrayList<>();
 	
 	@Column(nullable = false, columnDefinition = "bit")
 	private boolean active = true;
@@ -94,6 +97,18 @@ public class Client implements Identifiable, Activable {
 	@Override
 	public Long getId() {
 		return id;
+	}
+
+	public List<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(List<Request> requests) {
+		this.requests = requests;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

@@ -76,8 +76,8 @@ public class AddSalesController extends AutoClosableController {
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		List<Product> products = accessControlManager.findProducts(null, null, true);
-		UIHelper.buildProductsCombobox(products, product);
+	//	List<Product> products = accessControlManager.findProducts(null, null, true);
+	//	UIHelper.buildProductsCombobox(products, product);
 //		List<Service> services = new ArrayList<Service>();
 //		UIHelper.buildServicesCombobox(services,service);
 		Calendar calendar = Calendar.getInstance();
