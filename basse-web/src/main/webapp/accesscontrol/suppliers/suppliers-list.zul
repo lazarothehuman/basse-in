@@ -1,0 +1,61 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply=" mz.co.basse.accesscontrol.web.suppliers.SuppliersListingController"
+		width="100%">
+
+		<grid>
+			<rows>
+				<row>
+					<hbox align="center">
+						<button id="searchButton"
+							label="${labels.search.record}" />
+						<vlayout style="padding-left:10px">
+							<label value="${labels.name.record}" />
+							<textbox id="name" width="150px" />
+						</vlayout>
+						<vlayout style="padding-left:10px">
+							<label value="${labels.email.record}" />
+							<textbox id="email" width="150px" />
+						</vlayout>
+						<vlayout style="padding-left:10px">
+							<label value="${labels.phone.record}" />
+							<textbox id="phone" width="150px" />
+						</vlayout>
+						<label value="${labels.show.inactives}" />
+						<checkbox id="showInactives" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<listbox id="suppliersList" vflex="1" checkmark="true">
+			<listhead>
+				<listheader label="${labels.name.record}" />
+				<listheader label="${labels.phone.record}" />
+				<listheader label="${labels.email.record}" />
+				<listheader label="${labels.active.record}" />
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell label="${each.name}" />
+					<listcell label="${each.phone}" />
+					<listcell label="${each.email}" />
+					<listcell
+						label="${$composer.formatBoolean(each.active)}" />
+				</listitem>
+			</template>
+		</listbox>
+		<grid>
+			<rows>
+				<row>
+					<hbox>
+						<button id="addButton"
+							label="${labels.add.record}" />
+						<button id="inactivateButton"
+							label="${labels.inactivate.activate}" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

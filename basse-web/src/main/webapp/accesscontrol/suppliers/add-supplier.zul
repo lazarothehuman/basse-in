@@ -1,0 +1,33 @@
+<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<zk>
+	<window height="100%"
+		apply=" mz.co.basse.accesscontrol.web.suppliers.AddSupplierController">
+		<grid>
+			<columns>
+				<column width="200px" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.name.record} (*)" />
+					<textbox id="name" width="500px"
+						constraint="no empty" />
+				</row>
+				<row>
+					<label value="${labels.email.record} " />
+					<textbox id="email" width="500px" />
+				</row>
+				<row>
+					<label value="${labels.phone.record} " />
+					<textbox id="phone" width="500px" />
+				</row>
+				<row>
+					<label value="${labels.address.record} " />
+					<textbox id="address" width="500px" />
+				</row>
+			</rows>
+		</grid>
+		<separator />
+		<button id="saveButton" label="${labels.save.$}" />
+	</window>
+</zk>

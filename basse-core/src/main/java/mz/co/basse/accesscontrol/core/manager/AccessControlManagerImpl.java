@@ -8,6 +8,7 @@ import mz.co.basse.accesscontrol.core.dao.DocumentNumerationDao;
 import mz.co.basse.accesscontrol.core.dao.ProductDao;
 import mz.co.basse.accesscontrol.core.dao.ProfileDao;
 import mz.co.basse.accesscontrol.core.dao.RequestDao;
+import mz.co.basse.accesscontrol.core.dao.SupplierDao;
 import mz.co.basse.accesscontrol.core.dao.TransactionDao;
 import mz.co.basse.accesscontrol.core.dao.UserDao;
 import mz.co.basse.accesscontrol.core.model.Client;
@@ -17,6 +18,7 @@ import mz.co.basse.accesscontrol.core.model.Product;
 import mz.co.basse.accesscontrol.core.model.Profile;
 import mz.co.basse.accesscontrol.core.model.Request;
 import mz.co.basse.accesscontrol.core.model.RequestStatus;
+import mz.co.basse.accesscontrol.core.model.Supplier;
 import mz.co.basse.accesscontrol.core.model.Transaction;
 import mz.co.basse.accesscontrol.core.model.User;
 
@@ -49,6 +51,9 @@ public class AccessControlManagerImpl implements AccessControlManager {
 
 	@Autowired
 	private RequestDao requestDao;
+
+	@Autowired
+	private SupplierDao supplierDao;
 
 	public void createTransaction(Transaction transaction) {
 		transactionDao.create(transaction);
@@ -162,6 +167,31 @@ public class AccessControlManagerImpl implements AccessControlManager {
 			requestDao.create(request);
 		}
 
+	}
+
+	@Override
+	public void createSupplier(Supplier supplier) {
+		if (supplier != null) {
+			supplierDao.create(supplier);
+		}
+	}
+
+	@Override
+	public List<Supplier> findSuppliers(Long id, String name, String email, String address, String phone,
+			boolean active) {
+		return supplierDao.find(id,name,email, address,phone,active);
+	}
+
+	@Override
+	public void updateSupplier(Supplier supplier) {
+		supplierDao.update(supplier);
+		
+	}
+
+	@Override
+	public void createProduct(Product product) {
+		productDao.create(product);
+		
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +12,14 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 import mz.co.basse.accesscontrol.core.manager.AccessControlManager;
+import mz.co.basse.accesscontrol.core.model.Category;
 import mz.co.basse.accesscontrol.core.model.Client;
-import mz.co.basse.accesscontrol.core.model.Levy;
-import mz.co.basse.accesscontrol.core.model.LevyItem;
 import mz.co.basse.accesscontrol.core.model.Product;
-import mz.co.basse.accesscontrol.core.model.ProductPrice;
 import mz.co.basse.accesscontrol.core.model.Profile;
 import mz.co.basse.accesscontrol.core.model.Request;
 import mz.co.basse.accesscontrol.core.model.RequestItem;
-import mz.co.basse.accesscontrol.core.model.Technician;
+import mz.co.basse.accesscontrol.core.model.Supplier;
 import mz.co.basse.accesscontrol.core.model.User;
 import mz.co.basse.core.model.Language;
 import mz.co.basse.test.core.DBUnitTestCase;
@@ -84,6 +82,16 @@ public class AccessControlManagerTest extends DBUnitTestCase {
 		//Assert.assertNotNull(item.getId());
 		//Assert.assertEquals(1, request.getItems().size());
 	}
+	
+	@Test
+	@Rollback(value=false)
+	public void testCreateProduct() {
+		Product product = new Product();
+		product.setCategory(Category.IT);
+		product.setName("Consultoria");
+		accessControlManager.createProduct(product);
+		Assert.assertNotNull(product.getId());
+	}
 
 	@Test
 	@Rollback(value=false)
@@ -102,6 +110,46 @@ public class AccessControlManagerTest extends DBUnitTestCase {
 //		levy.addTechnician(technician);
 //		accessControlManager.createLevy(levy);
 	}
+	
+	
+	@Test
+	@Rollback(value=false)
+	public void testCreateSupplier() {
+		Supplier supplier = new Supplier();
+		supplier.setName("Muhammad");
+		supplier.setAddress("Av. Karl Marx");
+		supplier.setPhone("825004957");
+		supplier.setEmail("ass@ass.co.mz");
+		accessControlManager.createSupplier(supplier);
+		Assert.assertNotNull(supplier.getId());
+	}
+	
+	@Ignore
+	@Test
+	@Rollback(value=false)
+	public void testUpdateSupplier() {
+		Supplier supplier = accessControlManager.findSuppliers(1l, null, null, null, null, true).get(0);
+		supplier.setName("Muhammad");
+		supplier.setAddress("Av. Karl Marx");
+		supplier.setPhone("825004957");
+		supplier.setEmail("ass@ass.co.mz");
+		accessControlManager.updateSupplier(supplier);
+		Assert.assertNotNull(supplier.getId());
+	}
+	
+	@Test
+	@Rollback(value=false)
+	public void testCreateClient() {
+		Client client = new Client();
+		client.setName("Basse");
+		client.setAddress("SommerChield");
+		client.setDate(new Date());
+		client.setPhone("826499527");
+		client.setEmail("lzr@gmail.com");
+		accessControlManager.createOrUpdateClient(client);
+		Assert.assertNotNull(client.getId());
+	}
+	
 
 	@Override
 	protected String getDataSetFileName() {

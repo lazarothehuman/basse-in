@@ -6,6 +6,7 @@ import mz.co.basse.accesscontrol.core.model.Client;
 import mz.co.basse.accesscontrol.core.model.Product;
 import mz.co.basse.accesscontrol.core.model.Profile;
 import mz.co.basse.accesscontrol.core.model.Request;
+import mz.co.basse.accesscontrol.core.model.Supplier;
 import mz.co.basse.accesscontrol.core.model.Transaction;
 import mz.co.basse.accesscontrol.core.model.User;
 
@@ -50,6 +51,14 @@ public interface AccessControlManager {
 	Product findProduct(Long id);
 
 	void createRequest(Request request);
+
+	void createSupplier(Supplier supplier);
+
+	List<Supplier> findSuppliers(Long id, String name, String email, String address, String  phone, boolean active);
+
+	void updateSupplier(Supplier supplier);
+
+	void createProduct(Product product);
 	
 
 }
