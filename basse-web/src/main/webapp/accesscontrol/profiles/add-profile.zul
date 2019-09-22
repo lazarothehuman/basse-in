@@ -1,7 +1,7 @@
-<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<?init class="mz.co.basse.inbasse.web.util.AuthenticationValidatorInitiator"?>
 <zk>
 	<window height="100%"
-		apply="mz.co.basse.accesscontrol.web.profiles.AddProfileController">
+		apply="mz.co.basse.inbasse.accesscontrol.web.profiles.AddProfileController">
 		<grid>
 			<columns>
 				<column width="200px" align="right" />

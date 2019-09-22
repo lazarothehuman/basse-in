@@ -17,6 +17,8 @@
 		<tx:attributes>
 			<tx:method name="find*" read-only="true" propagation="SUPPORTS"
 				rollback-for="java.lang.Throwable" />
+			<tx:method name="fetch*" read-only="true" propagation="SUPPORTS"
+				rollback-for="java.lang.Throwable" />
 			<tx:method name="is*" read-only="true" propagation="SUPPORTS"
 				rollback-for="java.lang.Throwable" />
 			<tx:method name="*" rollback-for="java.lang.Throwable" />

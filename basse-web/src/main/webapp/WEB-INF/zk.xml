@@ -2,7 +2,7 @@
 
 <zk>
 	<!-- [Optional] Uncomment if you want to defines the application's name 
-		<preference> <name>org.zkoss.zk.ui.WebApp.name</name> <value>correctoras-web-zk</value> 
+		<preference> <name>org.zkoss.zk.ui.WebApp.name</name> <value>basse-web-zk</value> 
 		</preference> -->
 	<library-property>
 		<name>org.zkoss.web.preferred.locale</name>

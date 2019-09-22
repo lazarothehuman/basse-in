@@ -1,7 +1,7 @@
-<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<?init class="mz.co.basse.inbasse.web.util.AuthenticationValidatorInitiator"?>
 <zk>
 	<window id="clientsListWindow" height="100%"
-		apply="mz.co.basse.accesscontrol.web.clients.ClientsListingController"
+		apply="mz.co.basse.inbasse.accesscontrol.web.clients.ClientsListingController"
 		width="100%">
 
 		<grid>

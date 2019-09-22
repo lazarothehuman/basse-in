@@ -1,7 +1,7 @@
-<?init class="mz.co.basse.web.util.AuthenticationValidatorInitiator"?>
+<?init class="mz.co.basse.inbasse.web.util.AuthenticationValidatorInitiator"?>
 <zk>
 	<window height="100%"
-		apply="mz.co.basse.web.report.ReportPresenterController">
+		apply="mz.co.basse.inbasse.web.report.ReportPresenterController">
 		<iframe id="iframe" width="100%" height="100%" />
 	</window>
 </zk>
